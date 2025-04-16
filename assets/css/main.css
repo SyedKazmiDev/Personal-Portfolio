@@ -342,7 +342,6 @@ a h6:hover {
 		var(--tj-theme-primary) 0%,
 		var(--tj-white) 100%
 	);
-	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	display: inline-block;
 }
@@ -790,7 +789,6 @@ a h6:hover {
 		var(--tj-theme-primary) 0%,
 		var(--tj-white) 100%
 	);
-	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 
