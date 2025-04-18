@@ -5,6 +5,44 @@
 
 	$(document).ready(function ($) {
 
+			/*------------------------------------------------------
+  	/  Sticky Header
+  	/------------------------------------------------------*/
+	var lastScrollTop = 0;
+	$(window).scroll(function () {
+		var scroll = $(window).scrollTop();
+
+		if (scroll > 300) {
+			$(".tj-header-area.header-sticky").addClass("sticky");
+			$(".tj-header-area.header-sticky").removeClass("sticky-out");
+		} else if (scroll < lastScrollTop) {
+			if (scroll < 500) {
+				$(".tj-header-area.header-sticky").addClass("sticky-out");
+				$(".tj-header-area.header-sticky").removeClass("sticky");
+			}
+		} else {
+			$(".tj-header-area.header-sticky").removeClass("sticky");
+		}
+
+		lastScrollTop = scroll;
+	});
+		
+
+		/*------------------------------------------------------
+  	/  Hamburger Menu
+  	/------------------------------------------------------*/
+		$(".menu-bar").on("click", function () {
+			$(".menu-bar").toggleClass("menu-bar-toggeled");
+			$(".header-menu").toggleClass("opened");
+			$("body").toggleClass("overflow-hidden");
+		});
+
+		$(".header-menu ul li a").on("click", function () {
+			$(".menu-bar").removeClass("menu-bar-toggeled");
+			$(".header-menu").removeClass("opened");
+			$("body").removeClass("overflow-hidden");
+		});
+
 		
 		/*------------------------------------------------------
   	/  Portfolio Filter
